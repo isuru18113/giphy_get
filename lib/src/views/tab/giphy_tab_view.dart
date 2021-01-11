@@ -23,11 +23,8 @@ class GiphyTabView extends StatelessWidget {
           type: GiphyType.stickers,
           scrollController: scrollController,
         ),
-        GiphyTabDetail(
-          type: GiphyType.emoji,
-          scrollController: scrollController,
-        )
-      ],
+        
+        ],
     );
   }
 }

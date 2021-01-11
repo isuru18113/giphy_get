@@ -30,10 +30,7 @@ class _GiphyTabBarState extends State<GiphyTabBar> {
       Tab(
         text: "Stickers",
       ),
-      Tab(
-        text: "Emoji",
-      ),
-    ];
+     ];
 
     //  Listen Tab Controller
     widget.tabController.addListener(() {
@@ -79,10 +76,7 @@ class _GiphyTabBarState extends State<GiphyTabBar> {
       case 1:
         _tabType = GiphyType.stickers;
         break;
-      case 2:
-        _tabType = GiphyType.emoji;
-        break;
-    }
+      }
     _tabProvider.tabType = _tabType;
   }
 }

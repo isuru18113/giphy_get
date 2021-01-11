@@ -72,10 +72,7 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
       case GiphyType.stickers:
         _gifWidth = 150.0;
         break;
-      case GiphyType.emoji:
-        _gifWidth = 80.0;
-        break;
-      default:
+        default:
         break;
     }
 
