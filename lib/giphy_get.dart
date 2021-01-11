@@ -33,14 +33,14 @@ class GiphyGet {
     String rating = GiphyRating.g,
     String lang = GiphyLanguage.english,
     String randomID = "",
-    String searchText = "Search GIPHY",
+    String searchText = "Search GIPHY ISURU",
     bool modal = true,
     Color tabColor,
   }) =>
       showModalBottomSheet<GiphyGif>(
           clipBehavior: Clip.antiAlias,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10.0))),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(30.0))),
           isScrollControlled: true,
           context: context,
           builder: (ctx) => MultiProvider(providers: [
