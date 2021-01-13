@@ -8,6 +8,7 @@ class MockClient extends Mock implements Client {}
 
 void main() {
   var _apiKey = 'your api key here';
+  //Edit
 
   group('GiphyClient', () {
     test('should fetch trending gifs', () async {
