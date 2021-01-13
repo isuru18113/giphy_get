@@ -25,12 +25,15 @@ class _GiphyTabBarState extends State<GiphyTabBar> {
     // Set TabList
     _tabs = [
       Tab(
-        text: "GIFs",
+        icon: Icon(
+          Icons.gif_sharp,
+          size: 20,
+        ),
       ),
       Tab(
         text: "Stickers",
       ),
-     ];
+    ];
 
     //  Listen Tab Controller
     widget.tabController.addListener(() {
@@ -76,7 +79,7 @@ class _GiphyTabBarState extends State<GiphyTabBar> {
       case 1:
         _tabType = GiphyType.stickers;
         break;
-      }
+    }
     _tabProvider.tabType = _tabType;
   }
 }
