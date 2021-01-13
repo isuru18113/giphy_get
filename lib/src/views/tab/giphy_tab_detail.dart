@@ -72,8 +72,6 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
       case GiphyType.stickers:
         _gifWidth = 150.0;
         break;
-        default:
-        break;
     }
 
     // ScrollController
@@ -202,26 +200,24 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
         ? 0
         : _collection.pagination.offset + _collection.pagination.count;
 
-    // Get Gif 
-   
-      // If query text is not null search gif else trendings
-      if (_appBarProvider.queryText.isNotEmpty
-         ) {
-        _collection = await client.search(_appBarProvider.queryText,
-            lang: _tabProvider.lang,
-            offset: offset,
-            rating: _tabProvider.rating,
-            type: widget.type,
-            limit: _limit);
-      } else {
-        _collection = await client.trending(
-            lang: _tabProvider.lang,
-            offset: offset,
-            rating: _tabProvider.rating,
-            type: widget.type,
-            limit: _limit);
-      }
-    
+    // Get Gif
+
+    // If query text is not null search gif else trendings
+    if (_appBarProvider.queryText.isNotEmpty) {
+      _collection = await client.search(_appBarProvider.queryText,
+          lang: _tabProvider.lang,
+          offset: offset,
+          rating: _tabProvider.rating,
+          type: widget.type,
+          limit: _limit);
+    } else {
+      _collection = await client.trending(
+          lang: _tabProvider.lang,
+          offset: offset,
+          rating: _tabProvider.rating,
+          type: widget.type,
+          limit: _limit);
+    }
 
     // Set result to list
     if (_collection.data.isNotEmpty && mounted) {
