@@ -202,13 +202,11 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
         ? 0
         : _collection.pagination.offset + _collection.pagination.count;
 
-    // Get Gif or Emoji
-    if (widget.type == GiphyType.emoji) {
-      _collection = await client.emojis(offset: offset, limit: _limit);
-    } else {
+    // Get Gif 
+   
       // If query text is not null search gif else trendings
-      if (_appBarProvider.queryText.isNotEmpty &&
-          widget.type != GiphyType.emoji) {
+      if (_appBarProvider.queryText.isNotEmpty
+         ) {
         _collection = await client.search(_appBarProvider.queryText,
             lang: _tabProvider.lang,
             offset: offset,
@@ -223,7 +221,7 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
             type: widget.type,
             limit: _limit);
       }
-    }
+    
 
     // Set result to list
     if (_collection.data.isNotEmpty && mounted) {
