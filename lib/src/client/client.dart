@@ -65,25 +65,6 @@ class GiphyClient {
     );
   }
 
-  Future<GiphyCollection> emojis({
-    int offset = 0,
-    int limit = 30,
-    String rating = GiphyRating.g,
-    String lang = GiphyLanguage.english,
-  }) async {
-    return _fetchCollection(
-      baseUri.replace(
-        path: '$_apiVersion/${GiphyType.emoji}',
-        queryParameters: <String, String>{
-          'offset': '$offset',
-          'limit': '$limit',
-          'rating': rating,
-          'lang': lang,
-        },
-      ),
-    );
-  }
-
   Future<GiphyGif> random({
     String tag,
     String rating = GiphyRating.g,

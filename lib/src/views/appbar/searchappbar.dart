@@ -101,9 +101,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
             height: 2,
             color: _searchBackgroundColor,
           ),
-          _tabProvider.tabType == GiphyType.emoji
-              ? Container(height: 40.0, child: _giphyLogo())
-              : Container(
+          Container(
                   decoration: BoxDecoration(
                       color: _isDarkMode ? Colors.white : Colors.grey[300],
                       borderRadius: BorderRadius.circular(8.0)),

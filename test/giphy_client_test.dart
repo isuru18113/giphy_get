@@ -30,16 +30,6 @@ void main() {
       expect(collection, TypeMatcher<GiphyCollection>());
     });
 
-    test('should fetch emojis', () async {
-      final client = GiphyClient(
-        apiKey: _apiKey,
-      );
-
-      final collection = await client.emojis();
-
-      expect(collection, TypeMatcher<GiphyCollection>());
-    });
-
     test('should load a random gif', () async {
       final client = GiphyClient(
         apiKey: _apiKey,
