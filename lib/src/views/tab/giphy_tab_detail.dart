@@ -9,6 +9,7 @@ import 'package:giphy_get/src/client/models/type.dart';
 import 'package:giphy_get/src/providers/app_bar_provider.dart';
 import 'package:giphy_get/src/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class GiphyTabDetail extends StatefulWidget {
   final String type;
@@ -111,7 +112,28 @@ class _GiphyTabDetailState extends State<GiphyTabDetail> {
   Widget build(BuildContext context) {
     if (_list.isEmpty) {
       return Center(
-        child: CircularProgressIndicator(),
+        child: SpinKitChasingDots(
+          //color: Colors.red,
+
+          size: 40.0,
+          itemBuilder: (BuildContext context, int index) {
+            return DecoratedBox(
+              decoration: BoxDecoration(
+                //   color: index.isEven ? Colors.red : Colors.green,
+                borderRadius: BorderRadius.circular(10),
+                gradient: RadialGradient(
+                  center: Alignment.topLeft,
+                  radius: 1.0,
+                  colors: <Color>[Color(0xff5062E9), Color(0xff09C6F9)],
+                  tileMode: TileMode.mirror,
+                ),
+              ),
+            );
+          },
+
+          // controller: AnimationController(vsync: this, duration: const Duration(milliseconds: 2800)),
+          // key: ValueKey<int>(1),
+        ),
       );
     }
 
