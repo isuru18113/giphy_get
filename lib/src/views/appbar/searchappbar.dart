@@ -96,9 +96,9 @@ class _SearchAppBarState extends State<SearchAppBar> {
   Widget _searchWidget() => Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(vertical: 8.0),
+            margin: EdgeInsets.symmetric(vertical: 2.0),
             width: 50,
-            height: 2,
+            height: 10,
             color: _searchBackgroundColor,
           ),
           Container(
